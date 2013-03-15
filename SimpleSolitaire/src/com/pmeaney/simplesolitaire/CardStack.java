@@ -35,7 +35,7 @@ public class CardStack extends ArrayList<Card>{
 			updateDropArea();
 		}
 		else{
-			this.setDropArea(new Rect(Constants.GAMEBOARD_WIDTH / 80,(Constants.V_PADDING_AMOUNT + Constants.CARD_HEIGHT) * index,(Constants.GAMEBOARD_WIDTH / 80) + Constants.CARD_WIDTH,((Constants.V_PADDING_AMOUNT + Constants.CARD_HEIGHT) * index) + Constants.CARD_HEIGHT));
+			this.setDropArea(new Rect(Constants.GAMEBOARD_WIDTH / 80,Constants.V_PADDING_AMOUNT + (Constants.CARD_HEIGHT * index),(Constants.GAMEBOARD_WIDTH / 80) + Constants.CARD_WIDTH,Constants.V_PADDING_AMOUNT + (Constants.CARD_HEIGHT * index) + Constants.CARD_HEIGHT));
 		}
 	}
 	
@@ -46,6 +46,7 @@ public class CardStack extends ArrayList<Card>{
 		return toReturn;
 	}
 	
+	//TODO: FIx nullpointerexception on second part of if statement.
 	@Override
 	public boolean add(Card c){
 		if(this.init){
@@ -67,7 +68,7 @@ public class CardStack extends ArrayList<Card>{
 			}
 		}
 		else{
-			if(this.isEmpty() && c.getNumber() != Card.CardNumber.Ace)//If its empty and not a king
+			if(this.isEmpty() && c.getNumber() != Card.CardNumber.Ace)//If its empty and not an ace
 				return false;
 			else if(c.compareSuit(this.get(this.size() -1)) != 0 || c.compareTo(this.get(this.size() -1)) != 1)// If the last card and the current card are incompatible
 				return false;

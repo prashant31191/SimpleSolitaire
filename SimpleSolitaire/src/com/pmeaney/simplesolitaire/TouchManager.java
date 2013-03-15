@@ -129,25 +129,25 @@ public class TouchManager {
 		else{
 			if(game.stack1.getDropArea().contains(touchedPoint.x,touchedPoint.y) && game.floatingHand.size() == 1){
 				addSuccess = true;
-				if(game.stack1.addAll(game.floatingHand)){
+				if(game.stack1.add(game.floatingHand.get(0))){
 					game.floatingHand.clear();
 				}
 			}
 			else if(game.stack2.getDropArea().contains(touchedPoint.x,touchedPoint.y) && game.floatingHand.size() == 1){
 				addSuccess = true;
-				if(game.stack2.addAll(game.floatingHand)){
+				if(game.stack2.add(game.floatingHand.get(0))){
 					game.floatingHand.clear();
 				}
 			}
 			else if(game.stack3.getDropArea().contains(touchedPoint.x,touchedPoint.y) && game.floatingHand.size() == 1){
 				addSuccess = true;
-				if(game.stack3.addAll(game.floatingHand)){
+				if(game.stack3.add(game.floatingHand.get(0))){
 					game.floatingHand.clear();
 				}
 			}
 			else if(game.stack4.getDropArea().contains(touchedPoint.x,touchedPoint.y) && game.floatingHand.size() == 1){
 				addSuccess = true;
-				if(game.stack4.addAll(game.floatingHand)){
+				if(game.stack4.add(game.floatingHand.get(0))){
 					game.floatingHand.clear();
 				}
 			}
